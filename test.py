@@ -75,9 +75,9 @@ def load_user(email):
 	return User.getUserFromDB(cursor,email);
 
 
-@app.route('/', methods=['POST','GET'])
+@app.route('/setBookFirst', methods=['POST','GET'])
 
-def index():
+def setBookFirst():
 	cursor = connectDB();
 	cursor.execute("select name,author,cover_img from BOOKINFO where book_num='L0004';")
 
