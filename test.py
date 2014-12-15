@@ -75,7 +75,7 @@ def load_user(email):
 	return User.getUserFromDB(cursor,email);
 
 
-@app.route('/', methods=['post'])
+@app.route('/', methods=['POST','GET'])
 
 def index():
 	cursor = connectDB();
