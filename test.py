@@ -79,7 +79,7 @@ def load_user(email):
 
 def setBookFirst():
 	cursor = connectDB();
-	cursor.execute("select name,author,cover_img from BOOKINFO where book_num='L0004';")
+	cursor.execute("select name,author,cover_img,book_num from BOOKINFO where book_num='L0004';")
 
 	result = [];
 
