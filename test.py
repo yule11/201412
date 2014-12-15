@@ -8,7 +8,7 @@ import json;
 
 app = Flask(__name__);
 
-#초기 설정
+
 app.secret_key = "secret"
 login_manager = LoginManager()
 mysql = MySQL();
@@ -20,24 +20,14 @@ app.config['MYSQL_DATABASE_DB'] = 'secret';
 login_manager.init_app(app);
 mysql.init_app(app);
 
-#DB관련 함수
 
-#connectDB
-#	mysql db 에 접근하여 cursor를 리턴한다.
-#	접근할 db 명, 계정, 비밀번호는 위의 초기설정 부분에서 app.config로 정의
 def connectDB():
 	cursor = mysql.connect().cursor();
 	return cursor;
 
 
-#User 클래스와 관련 함수
 class User(UserMixin):
-	#User class
-	#  Variables
-	#    email : string (encoding UTF-8)
-	#    password : string (encoding UTF-8, encrypted by using sha1)
-	#    active, authenticate, anonymous : bool
-	#    loginDate :  datetime (datetime.utcnow)
+
 	def __init__(self, email, password):
 		self.email = email.encode('utf8');
 		self.password = password;
