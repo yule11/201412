@@ -88,7 +88,7 @@ def index():
 	for row in cursor:
 		result.append(dict(zip(colums,row)))
 
-	print(reuslt)
+	print(result)
 
 	return jason.dumps(result)
 
